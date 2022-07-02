@@ -50,19 +50,37 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(   
         backgroundColor: Color(0xfff5d415),
+        elevation: 0,
 
         leading: Icon(Icons.menu),
 
         title: Text(widget.title),
 
-        actions: [
+        actions: const [
           Icon(Icons.shopping_cart_outlined),
         ],
+
+        bottom: const PreferredSize(
+          preferredSize: Size.fromHeight(50),
+          child: Text("Enviar para Marcello Queiroz - Rua Jardim Paulista, 56"),
+        ),
 
 
         
       ),
-      body: Center(), // This trailing comma makes auto-formatting nicer for build methods.
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: const FractionalOffset(0.5, 0.2),
+            colors: [
+              Color(0xfff5d415), // Cor amarela
+              Color(0xfff5f5f5), // Cor cinza fundo
+            ]
+          ),
+        ),
+        
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
