@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mrecadoabertonovo/components/campo_pesquisa.dart';
 import 'package:mrecadoabertonovo/components/card_assinatura.dart';
 import 'package:mrecadoabertonovo/components/card_frete_gratis.dart';
+import 'package:mrecadoabertonovo/components/botao_categoria.dart';
+import 'package:mrecadoabertonovo/components/enviar_para.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,6 +36,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,8 +55,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
         ),
+        title: CampoPesquisa(),
         actions: [
-          CampoPesquisa(),
           Padding(padding: EdgeInsets.all(6)),
           Padding(
             padding: EdgeInsets.only(top: 10),
@@ -78,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   size: 22,
                 ),
                 Padding(padding: EdgeInsets.all(5)),
-                Text("Enviar para"),
+                EnviarPara(texto: "17511800 - Jardim Paulista")
               ],
             ),
           ),
@@ -117,6 +120,37 @@ class _MyHomePageState extends State<MyHomePage> {
             const Padding(padding: EdgeInsets.all(5)),
             const CardFreteGratis(),
             const Padding(padding: EdgeInsets.all(10)),
+
+            
+            Row(
+              children: [
+                const BotaoCategoria(
+                  icone: Icons.stay_current_portrait,
+                  text: "Recarregar",
+                ),
+
+                const BotaoCategoria(
+                  icone: Icons.sell_rounded,
+                  text: "Ofertas",
+                ),
+
+                const BotaoCategoria(
+                  icone: Icons.shopping_basket_outlined,
+                  text: "Mercado",
+                ),
+
+                const BotaoCategoria(
+                  icone: Icons.directions_car_outlined,
+                  text: "Veículos",
+                ),
+
+                const BotaoCategoria(
+                  icone: Icons.add,
+                  text: "Ver mais",
+                ),
+              ],
+            )
+
           ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
